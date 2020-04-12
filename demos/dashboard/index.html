@@ -293,12 +293,12 @@ input[disabled], button[disabled] {
 </head>
 <body>
   <header style="margin-bottom: 20px;">
-    <img class="logo" src="/demos/logo.png" alt="RTCMultiConnection" /> <span class="logo-text">Dashboard Example</span>
+  
 
-    <div style="float: right;margin-top: 15px;">
-      <button class="btn btn-primary" data-toggle="modal" data-target="#startRoomModel">Create A New Room</button>
-      <button id="btn-show-join-hidden-room" class="top-span btn btn-secondary" data-toggle="modal" data-target="#joinRoomModel">Join A Room</button>
-      <span class="top-span">Active rooms: <span id="active-rooms">0</span></span>
+    <div style="float: left;margin-top: 15px;">
+      <button class="btn btn-primary" data-toggle="modal" data-target="#startRoomModel">Create A New Classroom</button>
+      <button id="btn-show-join-hidden-room" class="top-span btn btn-secondary" data-toggle="modal" data-target="#joinRoomModel">Join A Classroom</button>
+      <span class="top-span">Active Classroom: <span id="active-rooms">0</span></span>
     </div>
   </header>
 
@@ -306,7 +306,7 @@ input[disabled], button[disabled] {
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="startRoomModelLabel">Create A New Room</h5>
+          <h5 class="modal-title" id="startRoomModelLabel">Create A New Classroom</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -315,7 +315,7 @@ input[disabled], button[disabled] {
           <form>
             <div class="form-group">
               <p>
-                <label for="txt-roomid" class="col-form-label">Enter Room ID:</label>
+                <label for="txt-roomid" class="col-form-label">Enter Classroom ID:</label>
                 <input type="text" class="form-control" id="txt-roomid">
               </p>
 
@@ -325,18 +325,16 @@ input[disabled], button[disabled] {
               </p>
 
               <p style="display: none;">
-                <label for="txt-room-password" class="col-form-label">Enter Room Password:</label>
+                <label for="txt-room-password" class="col-form-label">Enter Classroom Password:</label>
                 <input type="text" class="form-control" id="txt-room-password">
               </p>
 
-              <a href="" style="float: right; margin-bottom: 10px; font-size: 14px;" onclick="event.preventDefault();$('.more-options').show();$(this).hide();">Show More Options</a>
-
-              <p class="more-options" style="margin-bottom: 0; display: none;">
-                <label class="col-form-label"><input type="checkbox" id="chk-room-password"> Set Room Password?</label>
+              <p class="more-options" style="margin-bottom: 0; ">
+                <label class="col-form-label"><input type="checkbox" id="chk-room-password"> Set Classroom Password?</label>
               </p>
 
-              <p class="more-options" style="margin-top: 0; margin-bottom: 0; display: none;">
-                <label class="col-form-label"><input type="checkbox" id="chk-hidden-room"> Hidden Room? (Hide from the list)</label>
+              <p class="more-options" style="margin-top: 0; margin-bottom: 0; ">
+                <label class="col-form-label"><input type="checkbox" id="chk-hidden-room"> Create Private Classroom? (Hide from the list)</label>
               </p>
             </div>
           </form>
@@ -353,7 +351,7 @@ input[disabled], button[disabled] {
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="joinRoomModelLabel">Join A Room</h5>
+          <h5 class="modal-title" id="joinRoomModelLabel">Join A Classroom</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -362,7 +360,7 @@ input[disabled], button[disabled] {
           <form>
             <div class="form-group">
               <p>
-                <label for="txt-roomid-hidden" class="col-form-label">Enter Room ID:</label>
+                <label for="txt-roomid-hidden" class="col-form-label">Enter Classroom ID:</label>
                 <input type="text" class="form-control" id="txt-roomid-hidden">
               </p>
 
@@ -372,7 +370,7 @@ input[disabled], button[disabled] {
               </p>
 
               <p style="display: none;">
-                <label for="txt-room-password-hidden" class="col-form-label">Enter Room Password:</label>
+                <label for="txt-room-password-hidden" class="col-form-label">Enter Classroom Password:</label>
                 <input type="text" class="form-control" id="txt-room-password-hidden">
               </p>
             </div>
@@ -432,7 +430,7 @@ input[disabled], button[disabled] {
       <thead>
         <tr>
           <th>#</th>
-          <th>Room ID</th>
+          <th>Classroom ID</th>
           <th>Owner ID</th>
           <th>Session</th>
           <th>Extra</th>
@@ -440,11 +438,10 @@ input[disabled], button[disabled] {
           <th>Join</th>
         </tr>
       </thead>
-      <tbody id="rooms-list"><tr><td colspan=9>No active room found for this demo.</td></tr></tbody>
+      <tbody id="rooms-list"><tr><td colspan=9>No active Classroom found.</td></tr></tbody>
     </table>
   </section>
 
-  <footer style="text-align: center;">Dashboard + Video Conferencing + Chat + File Sharing</footer>
 
 <script>
 // this object is used to get uniquie rooms based on this demo
